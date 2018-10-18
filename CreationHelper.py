@@ -2,15 +2,7 @@ from github import Github
 import getpass
 import os
 import subprocess
-"""
-username = input("Please enter your username: ")
-try:
-    p = getpass.getpass()
-except Exception as error:
-    print('ERROR', error)
-else:
-    pass
-"""
+
 name = input("Enter the name of the repo that you want to create: ")
 g = Github("")
 user = g.get_user()
@@ -28,6 +20,6 @@ else:
     print("Ok, no one added!")
 
 
-os.system("cd /Users/mikeykahr/Desktop/Privat/SCHULE/POS/3.Klasse/Exercises && git clone https://github.com/"+username+"/"+name+".git")
-cmd = "hyper /Users/mikeykahr/Desktop/Privat/SCHULE/POS/3.Klasse/Exercises/"+name+"/"
+os.system("cd exercisefolder && git clone https://github.com/"+username+"/"+name+".git")
+cmd = "hyper exercisefolder"+name+"/"
 subprocess.Popen(cmd, shell=True)
